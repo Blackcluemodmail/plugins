@@ -314,17 +314,16 @@ class Decancer(commands.Cog):
             return
 
         if len(nice_nick) <= 1:
-            channel = self.bot.get_channel(995433424963764254)
+            channel = self.bot.get_channel(906782702110392341)
             await member.edit(nick=random_nick)
             return await channel.send(f"Decancered `{member.name}` to {random_nick}")
         elif len(nice_nick) >= 2:
-            channel = self.bot.get_channel(995433424963764254)
+            channel = self.bot.get_channel(906782702110392341)
             await member.edit(nick=nice_nick)
             return await channel.send(f"Decancered `{member.name}` to {nice_nick}")
 
     @commands.check_any(
         commands.has_permissions(manage_nicknames=True),
-        commands.has_role("Farm Hand - Chat Moderator"),
     )
     @commands.command(name="decancer", aliases=["dc"])
     async def decancer(self, ctx, member: discord.Member = None):
@@ -340,7 +339,7 @@ class Decancer(commands.Cog):
                 "Please provide a valid member lol\nExample: `??decancer @user`"
             )
         if member.top_role.position >= ctx.author.top_role.position:
-            return await ctx.send("<a:youtried:881184651232817232> lol")
+            return await ctx.send("lol")
         if nice_nick.lower() == bad_nick.lower():
             return await ctx.send(
                 "What are you trying to decancer huh? Its pingable smh"
