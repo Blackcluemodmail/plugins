@@ -422,7 +422,8 @@ class Decancer(commands.Cog):
             member = ctx.author
         else:
             member = thread.recipient
-        await ctx.send(f"{member.mention}'s ID is {member.id}")
+        await ctx.message.delete()
+        await ctx.send(f"{member.mention}'s ID is {member.id}", delete_after=15)
 
 async def setup(bot):
     await bot.add_cog(Decancer(bot))
