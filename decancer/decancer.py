@@ -5,6 +5,12 @@ import re
 import random
 import unicodedata
 from unidecode import unidecode
+from core import checks
+from core.models import PermissionLevel
+
+class userID(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
 
 
 class Decancer(commands.Cog):
